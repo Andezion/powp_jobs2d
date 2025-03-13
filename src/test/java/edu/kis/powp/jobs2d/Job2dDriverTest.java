@@ -8,17 +8,20 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
  * 
  * @author Dominik
  */
-public class Job2dDriverTest {
+public class Job2dDriverTest
+{
 	private static Job2dDriver driver = new StubDriver();
 
 	/**
 	 * Driver test.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		FiguresJoe.figureScript1(driver);
 	}
 
-	private static class StubDriver implements Job2dDriver {
+	private static class StubDriver implements Job2dDriver
+	{
 
 		@Override
 		public void operateTo(int x, int y) {
