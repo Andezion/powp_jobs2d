@@ -14,7 +14,8 @@ import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
-public class TestJobs2dPatterns {
+public class TestJobs2dPatterns
+{
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
@@ -22,9 +23,10 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
+	private static void setupPresetTests(Application application)
+	{
+		SelectTestFigureOptionListener selectTestFigureOptionListener =
+				new SelectTestFigureOptionListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 	}
@@ -34,8 +36,10 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupDrivers(Application application) {
+	private static void setupDrivers(Application application)
+	{
 		Job2dDriver loggerDriver = new LoggerDriver();
+
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
@@ -50,7 +54,8 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupDefaultDrawerVisibilityManagement(Application application) {
+	private static void setupDefaultDrawerVisibilityManagement(Application application)
+	{
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
@@ -62,7 +67,8 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupLogger(Application application) {
+	private static void setupLogger(Application application)
+	{
 		application.addComponentMenu(Logger.class, "Logger", 0);
 		application.addComponentMenuElement(Logger.class, "Clear log",
 				(ActionEvent e) -> application.flushLoggerOutput());
@@ -78,14 +84,20 @@ public class TestJobs2dPatterns {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
 				Application app = new Application("2d jobs Visio");
+
 				DrawerFeature.setupDrawerPlugin(app);
-				setupDefaultDrawerVisibilityManagement(app);
+
+				//setupDefaultDrawerVisibilityManagement(app); drawing on one place only
 
 				DriverFeature.setupDriverPlugin(app);
+
 				setupDrivers(app);
 				setupPresetTests(app);
 				setupLogger(app);
