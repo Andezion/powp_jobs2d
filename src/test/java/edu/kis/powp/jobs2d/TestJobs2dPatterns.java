@@ -33,6 +33,8 @@ public class TestJobs2dPatterns
 		application.addTest("Figure Joe1", selectTestFigureOptionListener);
 
 		application.addTest("Figure Joe2", selectTestFigureOptionListener);
+
+		application.addTest("Rect", selectTestFigureOptionListener);
 	}
 
 	/**

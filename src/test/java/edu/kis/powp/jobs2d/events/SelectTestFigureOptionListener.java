@@ -3,6 +3,7 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import edu.kis.powp.jobs2d.command.factory.RectFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
@@ -25,9 +26,13 @@ public class SelectTestFigureOptionListener implements ActionListener
 		{
             FiguresJoe.figureScript1(driverManager.getCurrentDriver());
         }
-		else
+		else if(e.getActionCommand().compareTo("Figure Joe2") == 0)
 		{
             FiguresJoe.figureScript2(driverManager.getCurrentDriver());
         }
+		else
+		{
+			RectFactory.createRectangle(driverManager.getCurrentDriver());
+		}
     }
 }
