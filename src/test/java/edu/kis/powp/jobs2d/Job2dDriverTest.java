@@ -1,6 +1,5 @@
 package edu.kis.powp.jobs2d;
 
-import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 /**
@@ -8,25 +7,30 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
  * 
  * @author Dominik
  */
-public class Job2dDriverTest {
-	private static Job2dDriver driver = new StubDriver();
+public class Job2dDriverTest
+{
+	public static Job2dDriver driver = new StubDriver();
 
 	/**
 	 * Driver test.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		FiguresJoe.figureScript1(driver);
 	}
 
-	private static class StubDriver implements Job2dDriver {
+	public static class StubDriver implements Job2dDriver
+	{
 
 		@Override
-		public void operateTo(int x, int y) {
+		public void operateTo(int x, int y)
+		{
 			System.out.println("Driver operateTo action...");
 		}
 
 		@Override
-		public void setPosition(int x, int y) {
+		public void setPosition(int x, int y)
+		{
 			System.out.println("Driver setPosition action...");
 		}
 	};
