@@ -5,7 +5,7 @@ import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
-import edu.kis.powp.jobs2d.features.DrawerFeature; // added
+import edu.kis.powp.jobs2d.features.DrawFeature; // added
 
 /**
  * driver adapter to drawer with several bugs.
@@ -37,7 +37,7 @@ public class MyAdapter extends DrawPanelController implements Job2dDriver
 
 		drawLine(line);
 
-		DrawerFeature.getDrawerController().drawLine(line);
+		DrawFeature.getDrawerController().drawLine(line);
 
 		setPosition(x, y); // to change our picture
 	}

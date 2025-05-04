@@ -11,7 +11,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.MyAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.features.DrawerFeature;
+import edu.kis.powp.jobs2d.features.DrawFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
@@ -99,7 +99,7 @@ public class TestJobs2dPatterns
 			{
 				Application app = new Application("2d jobs Visio");
 
-				DrawerFeature.setupDrawerPlugin(app);
+				DrawFeature.setupDrawerPlugin(app);
 
 				//setupDefaultDrawerVisibilityManagement(app); drawing on one place only
 
