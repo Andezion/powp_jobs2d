@@ -6,6 +6,7 @@ public class setPositionCommand implements driverCommand
 {
     private final int x;
     private final int y;
+
     private Job2dDriver driver;
 
     public setPositionCommand(int x, int y, Job2dDriver driver)
