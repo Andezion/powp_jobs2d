@@ -3,8 +3,7 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
-import edu.kis.powp.commands.driverCommand;
-import edu.kis.powp.commands.complexCommandFactory;
+import edu.kis.powp.commands.ComplexCommandFactory;
 
 public class SelectTestFigure3Listener implements ActionListener
 {
@@ -18,7 +17,7 @@ public class SelectTestFigure3Listener implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        DriverCommand rectangle = complexCommandFactory.getRectangle();
+        DriverCommand rectangle = ComplexCommandFactory.getRectangle();
         rectangle.execute();
     }
 }
