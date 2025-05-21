@@ -4,12 +4,13 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
-import edu.kis.powp.jobs2d.features.DrawerFeature;
+
+import edu.kis.powp.jobs2d.features.DrawerFeature; // added
 
 /**
- * driver without bugs but, I've copied it from MyAdapter ://
+ * driver adapter to drawer with several bugs.
  */
-public class LineDrawerAdapter implements Job2dDriver
+public class BasicLineDrawerAdapter implements Job2dDriver
 {
     private int startX = 0;
     private int startY = 0;
@@ -17,7 +18,7 @@ public class LineDrawerAdapter implements Job2dDriver
     private final DrawPanelController controller;
     private final Supplier<ILine> lineSupplier;
 
-    public LineDrawerAdapter(DrawPanelController controller, Supplier<ILine> lineSupplier)
+    public BasicLineDrawerAdapter(DrawPanelController controller, Supplier<ILine> lineSupplier)
     {
         this.controller = controller;
         this.lineSupplier = lineSupplier;
@@ -31,8 +32,7 @@ public class LineDrawerAdapter implements Job2dDriver
     }
 
     @Override
-    public void operateTo(int x, int y)
-    {
+    public void operateTo(int x, int y) {
         ILine line = lineSupplier.get();
 
         line.setStartCoordinates(this.startX, this.startY);
@@ -46,6 +46,6 @@ public class LineDrawerAdapter implements Job2dDriver
     @Override
     public String toString()
     {
-        return "This is my Adapter";
+        return "BasicLineDrawerAdapter";
     }
 }
